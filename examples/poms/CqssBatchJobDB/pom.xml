@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.cqss</groupId>
+        <artifactId>cqss-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>CqssBatchJobDB</artifactId>
+    <packaging>jar</packaging>
+
+    <n>CQSS Batch Job DB</n>
+    <description>CQSS Batch Job Database Module</description>
+
+    <dependencies>
+        <!-- CQSS modules -->
+        <dependency>
+            <groupId>com.cqss</groupId>
+            <artifactId>CqssVo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cqss</groupId>
+            <artifactId>CqssDB</artifactId>
+        </dependency>
+        
+        <!-- CyberUtil Batch libraries -->
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-batch</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-batch-db</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-batch-vo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-batch-job</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-tools</artifactId>
+        </dependency>
+        
+        <!-- Apache Commons -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+        
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+        </dependency>
+        
+        <!-- iBatis -->
+        <dependency>
+            <groupId>org.apache.ibatis</groupId>
+            <artifactId>ibatis-sqlmap</artifactId>
+        </dependency>
+        
+        <!-- Logging -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                    <exclude>**/*.mf</exclude>
+                    <exclude>**/*.contrib</exclude>
+                    <exclude>**/*.keep</exclude>
+                    <exclude>**/*.mkelem</exclude>
+                    <exclude>**/*.checkout</exclude>
+                    <exclude>**/*.unloaded</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
