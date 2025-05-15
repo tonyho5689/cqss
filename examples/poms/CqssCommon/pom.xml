@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.cqss</groupId>
+        <artifactId>cqss-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>CqssCommon</artifactId>
+    <packaging>jar</packaging>
+
+    <n>CQSS Common</n>
+    <description>CQSS Common Module</description>
+
+    <dependencies>
+        <!-- Apache Commons -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+        
+        <!-- Logging -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        
+        <!-- WebSphere Core -->
+        <dependency>
+            <groupId>com.wnb.was</groupId>
+            <artifactId>ejb-common</artifactId>
+        </dependency>
+        
+        <!-- WNB Core -->
+        <dependency>
+            <groupId>com.wnb.core</groupId>
+            <artifactId>app-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.wnb.core</groupId>
+            <artifactId>app-msg</artifactId>
+        </dependency>
+        
+        <!-- CyberUtil -->
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-common-for-was</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                    <exclude>**/*.mf</exclude>
+                    <exclude>**/*.contrib</exclude>
+                    <exclude>**/*.keep</exclude>
+                    <exclude>**/*.mkelem</exclude>
+                    <exclude>**/*.checkout</exclude>
+                    <exclude>**/*.unloaded</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
