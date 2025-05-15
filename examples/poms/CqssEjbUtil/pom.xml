@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.cqss</groupId>
+        <artifactId>cqss-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>CqssEjbUtil</artifactId>
+    <packaging>jar</packaging>
+
+    <n>CQSS EJB Utility</n>
+    <description>CQSS EJB Utility Module</description>
+
+    <dependencies>
+        <!-- CQSS modules -->
+        <dependency>
+            <groupId>com.cqss</groupId>
+            <artifactId>CqssCommon</artifactId>
+        </dependency>
+        
+        <!-- Apache Commons -->
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-chain</groupId>
+            <artifactId>commons-chain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.5</version>
+        </dependency>
+        
+        <!-- Logging -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        
+        <!-- Core libraries -->
+        <dependency>
+            <groupId>com.wnb.core</groupId>
+            <artifactId>app-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.wnb.core</groupId>
+            <artifactId>app-msg</artifactId>
+        </dependency>
+        
+        <!-- WebSphere Core -->
+        <dependency>
+            <groupId>com.wnb.was</groupId>
+            <artifactId>wnb-log</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.wnb.was</groupId>
+            <artifactId>ejb-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.wnb.was</groupId>
+            <artifactId>ejb-intra-common-scs</artifactId>
+        </dependency>
+        
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>2.7.6</version>
+        </dependency>
+        
+        <!-- iBatis -->
+        <dependency>
+            <groupId>org.apache.ibatis</groupId>
+            <artifactId>ibatis-sqlmap</artifactId>
+        </dependency>
+        
+        <!-- CyberUtil -->
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-common-for-was</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-tools-for-was</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberutil</groupId>
+            <artifactId>cyber-util-for-was</artifactId>
+        </dependency>
+        
+        <!-- WebSphere API - provided scope -->
+        <dependency>
+            <groupId>com.ibm.websphere</groupId>
+            <artifactId>was-api</artifactId>
+            <version>${websphere.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                    <exclude>**/*.mf</exclude>
+                    <exclude>**/*.contrib</exclude>
+                    <exclude>**/*.keep</exclude>
+                    <exclude>**/*.mkelem</exclude>
+                    <exclude>**/*.checkout</exclude>
+                    <exclude>**/*.unloaded</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
