@@ -25,6 +25,26 @@ The project consists of the following modules:
 
 This project has been migrated from an Ant-based build system to Maven. The migration guide can be found in the [docs/cqss-migration-guide.md](docs/cqss-migration-guide.md) file.
 
+## POM Files
+
+Maven POM files have been provided for all modules in the project. These can be found in the [examples/poms](examples/poms) directory:
+
+- [Parent POM](examples/poms/pom.xml) - The main POM file with common configuration for all modules
+- [CqssApplet](examples/poms/CqssApplet/pom.xml) - Java applet module
+- [CqssBatchJobDB](examples/poms/CqssBatchJobDB/pom.xml) - Batch job database module
+- [CqssCommon](examples/poms/CqssCommon/pom.xml) - Common utilities module
+- [CqssDB](examples/poms/CqssDB/pom.xml) - Database access layer
+- [CqssEjbTestClient](examples/poms/CqssEjbTestClient/pom.xml) - EJB test client module
+- [CqssEjbUtil](examples/poms/CqssEjbUtil/pom.xml) - EJB utility classes module
+- [CqssIntraEAR](examples/poms/CqssIntraEAR/pom.xml) - EAR packaging module
+- [CqssIntraEjb](examples/poms/CqssIntraEjb/pom.xml) - Intranet EJB module
+- [CqssIntranetWeb](examples/poms/CqssIntranetWeb/pom.xml) - Intranet web application module
+- [CqssSecurityAdmin](examples/poms/CqssSecurityAdmin/pom.xml) - Security administration module
+- [CqssStartup](examples/poms/CqssStartup/pom.xml) - Application startup module
+- [CqssSvr](examples/poms/CqssSvr/pom.xml) - Server module
+- [CqssVo](examples/poms/CqssVo/pom.xml) - Value Objects module
+- [Ibator](examples/poms/Ibator/pom.xml) - iBATIS code generator module
+
 ## Build Instructions
 
 ### Prerequisites
