@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.cqss</groupId>
+        <artifactId>cqss-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>CqssEjbTestClient</artifactId>
+    <packaging>jar</packaging>
+
+    <n>CQSS EJB Test Client</n>
+    <description>CQSS EJB Test Client Module</description>
+
+    <dependencies>
+        <!-- CQSS modules -->
+        <dependency>
+            <groupId>com.cqss</groupId>
+            <artifactId>CqssVo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cqss</groupId>
+            <artifactId>CqssCommon</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cqss</groupId>
+            <artifactId>CqssIntraEjb</artifactId>
+            <type>ejb</type>
+        </dependency>
+        
+        <!-- WNB Core -->
+        <dependency>
+            <groupId>com.wnb.core</groupId>
+            <artifactId>app-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.wnb.core</groupId>
+            <artifactId>app-msg</artifactId>
+        </dependency>
+        
+        <!-- WebSphere Core -->
+        <dependency>
+            <groupId>com.wnb.was</groupId>
+            <artifactId>ejb-common</artifactId>
+        </dependency>
+        
+        <!-- Logging -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+        
+        <!-- WebSphere API - provided scope -->
+        <dependency>
+            <groupId>com.ibm.websphere</groupId>
+            <artifactId>was-api</artifactId>
+            <version>${websphere.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                    <exclude>**/*.mf</exclude>
+                    <exclude>**/*.contrib</exclude>
+                    <exclude>**/*.keep</exclude>
+                    <exclude>**/*.mkelem</exclude>
+                    <exclude>**/*.checkout</exclude>
+                    <exclude>**/*.unloaded</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.cqss.ejb.test.TestClient</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
